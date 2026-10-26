@@ -4,6 +4,25 @@ What changed in each Velin release, newest first. Versions follow semantic versi
 
 ## Unreleased
 
+## 0.3.0 — 2026-10-26
+
+### Changed
+
+- A board's **+** no longer opens a new note: you name the card at the top of the column and stay on the board. Return makes it, the card sliding down to its place, and lets you type the next, Cmd-Return makes it and opens its note, Escape stops. **n** does the same in the column you are in.
+- Clicking a board card selects it instead of opening its note. Open a note with a double-click, Enter, or the arrow that shows on the card under the mouse.
+
+### Added
+
+- Habits: keep habits in a file and tick them day by day, a row per habit and a column per day. Set a goal (the days it runs and the share to reach) by clicking it, with lines in the days where it starts and ends, and see how it stands, with each habit's rate and streak. Click a name to rename it, drag it to reorder the habits, and remove one with the bin beside it. Make one with *New Habits File* in the command palette.
+- Board cards can be selected together: Cmd-click across columns, Shift-click for a range in a column, Cmd-A for all. Drag, Alt-arrows or the right-click menu move them all at once, and Backspace deletes their notes. Dragged, the other selected cards glide in to stack behind the one you hold, and when you let go they glide from there to their places.
+- Datafall, a new theme with an image behind the window: neon light falling through the dark, in nine colours. Pick the colour from the swatches under the theme cards. Your own themes can come in several colours too.
+- Line numbers can be shown or hidden from the margin beside the text: move the mouse there and click the button that fades in, or right-click for the menu. *Show or Hide Line Numbers* is in the palette too.
+
+### Fixed
+
+- Undo on a board puts cards moved to another column back, the property in their notes too, and Redo moves them again. Folding and unfolding a column is no longer undone, and a folded column opens when an undo changes what is in it.
+- Dragging the page width, a selection or anything else held by the mouse to the window's edge no longer brings a hidden sidebar, top bar or status bar in. Dragging a tab or file there still does.
+
 ## 0.2.0 — 2026-10-19
 
 ### Changed
