@@ -4,6 +4,12 @@ What changed in each Velin release, newest first. Versions follow semantic versi
 
 ## Unreleased
 
+## 0.3.1 — 2026-10-26
+
+### Fixed
+
+- Pasting text copied from some apps, old files or a terminal no longer closes Velin. Their old kinds of line breaks become ordinary ones, and notes that already have them open as they should.
+
 ## 0.3.0 — 2026-10-26
 
 ### Changed
