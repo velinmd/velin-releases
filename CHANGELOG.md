@@ -4,6 +4,22 @@ What changed in each Velin release, newest first. Versions follow semantic versi
 
 ## Unreleased
 
+## 0.4.0 — 2026-10-29
+
+### Changed
+
+- Habits label the days with two letters (Mo, Tu, We), like the calendar and periodic notes, so Tuesday and Thursday no longer look alike.
+
+### Added
+
+- Habits that aren't kept every day: keep one on some days of the week (only those days are due), or a number of times a week or month (any day counts, and each week shows how many of its times are done, more than asked included). Right-click a habit's name to set it; how it is kept shows in a badge beside the name. Streaks count those days, or weeks and months in a row.
+- Habits in notes: embed a habits file with `![[Sleep.json]]` and the note shows the days of its period. A daily or weekly note shows each habit's boxes as the habits file draws them, today's band and each day's count included, ticked with a click; a monthly note a mark per day and the share kept; a quarterly or yearly note the share as a bar; any other note this week. Several in one note line up, day under day, and a name cut short shows whole under the mouse. Fold an embed with the arrow beside it, like a heading, to keep just its title and today's ticks. Put it in your weekly template and every week starts with its habits.
+- Habits work with vim's keys: h j k l between days and habits, w and b a week, 0 the habit's first day, $ or t back to today, gg and G the first and last habit. x ticks, o adds a habit, r or cw renames it, dd removes it, Alt-j and Alt-k move it, u and Ctrl-R undo and redo. Alt-↑ and Alt-↓ move a habit too.
+
+### Fixed
+
+- In habits, the arrow keys stay on days that can be ticked: they stop at today, and at the day a habit was first kept.
+
 ## 0.3.1 — 2026-10-26
 
 ### Fixed
