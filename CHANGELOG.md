@@ -1,10 +1,17 @@
 # Changelog
 
-What changed in each Velin release, newest first.
+## 0.6.0 — 2026-11-07
 
-Your notes are plain `.md` files and stay that way: whatever changes below, they open in any editor, on any computer.
+### Changed
 
-Velin is in alpha, so a release may change the files Velin keeps for itself: settings, boards, canvases, sheets, dashboards and the `.velin/` folder in a space. Each release lists those changes first, under **Breaking**, with what to do about them.
+- A new version shows as a button beside Settings at the foot of the sidebar, instead of in the status bar: click it to update, and again to restart.
+
+### Added
+
+- History keeps earlier versions of every file in your space, outside it. ⌘⌥Y shows a note's versions and what changed, restores one with a click, and brings deleted files back.
+- Help → Report a Problem… (or ⌘⇧U) sends us what went wrong, with a screen capture if you keep it ticked.
+- After Velin quits unexpectedly, the next start offers to send the crash report, once.
+- Help → Terms of Use and Third-Party Notices.
 
 ## 0.5.0 — 2026-11-07
 
@@ -42,10 +49,6 @@ Velin is in alpha, so a release may change the files Velin keeps for itself: set
 
 ## 0.4.0 — 2026-10-29
 
-### Breaking
-
-- Nothing in Velin's own files changed.
-
 ### Changed
 
 - Habits label days with two letters (Mo, Tu, We), like the calendar.
@@ -62,19 +65,11 @@ Velin is in alpha, so a release may change the files Velin keeps for itself: set
 
 ## 0.3.1 — 2026-10-26
 
-### Breaking
-
-- Nothing in Velin's own files changed.
-
 ### Fixed
 
 - Pasting text with old kinds of line breaks, from some apps, old files or a terminal, no longer closes Velin.
 
 ## 0.3.0 — 2026-10-26
-
-### Breaking
-
-- Nothing in Velin's own files changed.
 
 ### Changed
 
@@ -133,10 +128,6 @@ Velin is in alpha, so a release may change the files Velin keeps for itself: set
 - On a board, a trackpad swipe keeps to the direction it starts in.
 
 ## 0.1.1 — 2026-10-17
-
-### Breaking
-
-- Nothing in Velin's own files changed.
 
 ### Fixed
 
