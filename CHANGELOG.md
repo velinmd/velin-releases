@@ -15,7 +15,6 @@ Velin is in alpha, so a release may change the files Velin keeps for itself: set
 ### Changed
 
 - New finance dashboards keep their data in plain CSV files instead of a database. Finance dashboards made before keep working as they are.
-- The Cyberpunk themes are now called Digital.
 - Tables in notes sit on a soft panel, with more room in the cells.
 - A note starts a little further down the window and stays put when the top bar comes and goes.
 - Mermaid diagrams have a new look: soft shapes, your note's font and the theme's colours, with lines at right angles.
