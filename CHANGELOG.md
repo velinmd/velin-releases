@@ -4,6 +4,83 @@ What changed in each Velin release, newest first. Versions follow semantic versi
 
 ## Unreleased
 
+## 0.5.0 — 2026-11-07
+
+### Changed
+
+- `velin import <space>` now copies the space beside the original, as `<name> (Velin)`, and converts the copy; the original stays as it was. Pass `--to <folder>` to choose where the copy goes, or `--in-place` to convert the space itself as before.
+- The finance dashboard template keeps its data in plain CSV files beside the dashboards (transactions, categories, debts, balances, rules and imports) instead of a database, so you can read and change them anywhere and each change shows in the file's history. Categorising in the Month table changes that row of the file, the rules sort transactions by the first one that matches, in the file's order, and the Week template counts money spent from the same file. Finance dashboards made before keep working on their database.
+- The Cyberpunk group of themes is now called Digital.
+- Tables in notes sit on a soft panel, like callouts, with quiet lines between the rows and more room in the cells.
+- A note starts further down the window, and stays where it is when the top bar comes and goes.
+- The top bar's button stays quiet while the top bar is kept in view, like the status bar's.
+- Mermaid diagrams have a new look: soft shapes that let the background show through, your note's font, and colours that all come from the theme.
+- Lines in Mermaid diagrams run in right angles with their labels beside them, and edges from one node join into a single line.
+- Sequence diagrams show their participants once, at the top, and class diagrams leave out empty parts.
+- Actors in sequence diagrams are cards with a person beside the name, user journeys show scores as numbered dots, and pie charts draw as rings with the total in the middle.
+
+### Added
+
+- Dashboards can change CSV files: an editable table or a button works on a CSV file as it does on a database. Only the rows that change are rewritten, so the rest of the file stays exactly as it was.
+- Habits: right-click a day to mark it missed or skipped (or press m or s). Missed counts as a day not done but shows it is dealt with; skipped is left out of rates and streaks, and takes its share off a week's or month's count. Days to come can be skipped ahead, and a day's count turns to the accent once every habit is dealt with.
+- Velin tells you when a newer version is out: at launch it checks, and the status bar offers the update. One click downloads it, checks that it is signed and notarized, and puts it in place; Restart opens the new version. Turn the check off in Settings → General, or check by hand with Check for Updates in the Velin menu.
+- Canvases show their file too: Cmd-E, or *Tree* and *Source* in the status bar, opens the canvas as a tree or as text in the same tab, and Cmd-E brings it back.
+- Icons in Mermaid diagrams: Font Awesome and other icon names (`fa:fa-car`, `::icon(fa fa-book)`, `@{ icon: "fa:user" }`) draw as matching Lucide icons in flowcharts, mindmaps, architecture, tree view and use case diagrams. Names with no match, like brand logos, are left out.
+- Velin draws Mermaid Wardley maps, Cynefin diagrams and railroad diagrams in EBNF, ABNF, PEG and Mermaid's own primitives.
+- Velin draws Mermaid use case, swimlane, agent flow and event modeling diagrams.
+- Velin draws Mermaid requirement, C4, architecture and block diagrams.
+- Velin draws eight more kinds of Mermaid diagram: packet, kanban, tree view, radar, sankey, treemap, Ishikawa and Venn.
+- Mermaid class diagrams group classes in namespaces, nested too, and entity relationship diagrams group entities in subgraphs.
+- Mermaid pie charts take `donutHole`, `legendPosition` and `highlightSlice`; Gantt charts draw vertical markers, a today line and compact rows, and take `tickInterval`.
+- Mermaid git graphs run `TB` and `BT`, line up parallel commits, and can hide branch names and commit labels; XY charts run sideways and show a legend and value labels.
+- Mermaid timelines run downwards with `timeline TD`, quadrant points take their own styles, and mindmaps can colour by depth.
+- Mermaid class diagrams draw two-way relations and lollipop interfaces, state diagrams draw concurrent regions, and `classDef`, `class`, `:::` and `style` now work in class, state and entity relationship diagrams.
+- Mermaid sequence diagrams draw boundary, control, entity, database, collections and queue participants, participants created and destroyed along the way, central connections, half arrows and `autonumber` with a start and step.
+- Mermaid flowchart nodes can take a label in brackets and settings in `@{ }` together, as in `a["Draft"]@{ shape: doc }`.
+- Mermaid flowcharts draw every named shape, like `A@{ shape: doc }`, with the text centred in the part of the shape that holds it and lines meeting the shape itself; small picture shapes such as the hourglass and bolt carry their label beneath. They also follow `linkStyle` and show Markdown in labels written in backticks.
+- Background images can be pixelated: the Pixelate slider under Settings → Background → Image turns any image, a theme's painting included, into square blocks of colour.
+- Many more painting themes, each in dark and light with colours from the painting, from Bruegel’s *Hunters in the Snow* to Monet’s *Impression, Sunrise*.
+- Bug recorder: switch the module on and Cmd-Shift-U, or the bug button in the sidebar, freezes the window as it is, asks what went wrong, and saves a note with a screen capture to a folder you choose.
+
+### Fixed
+
+- Enter on an empty nested list item moves it out a level instead of clearing it; only an empty top-level item ends the list.
+- Numbered lists keep their numbers in order: adding an item in the middle renumbers the ones after it, and an indented list starts again at 1.
+- The quick switcher goes away when a shortcut opens a note or another tab comes forward, instead of staying over it.
+- In a weekly note's template, `{{monday}}`, `{{sunday}}` and the other days now fall in the note's own week when weeks start on Monday; before, Monday came out as Tuesday and Sunday as the Monday before.
+- The sample space's weekly template no longer repeats the note's name as a heading under its title.
+- Following a link to a note Velin hadn't listed yet, like one an assistant had just written or one in a hidden folder, could empty that note. It now opens the note as it is.
+- Making, copying, pasting, renaming or moving a file never replaces another file of that name, even one another app makes at the same moment.
+- A file Velin has to write in place (one with a second name, or in a folder Velin can't add to) gets its old text back if the write fails partway.
+- Renaming a note keeps the spaces around its name in links written as `[[ Name ]]`.
+- With the image frame on, a picture in its own tab rounds its corners to the frame's, and PDF pages wear the frame too.
+- Icon names in Mermaid flowchart labels no longer show as text.
+- In a weekly note's bar, each day's name and date sit centred in their box, with room around them, whether or not the day has a note.
+- Lines into a Mermaid subgraph go round what is inside it, instead of running through it.
+- Tables wider than the note wrap their cells to fit, instead of running off the screen.
+- Mermaid shapes written the long way, like `A@{ shape: cyl, label: "Data" }`, draw as that shape instead of a diamond with the raw text.
+- Mermaid trapezoids draw correctly with another slanted shape later on the same line.
+- Package visibility `~` on class members in Mermaid diagrams stays as written.
+- Dates along a Gantt chart's axis no longer run into each other, and `until` can name a task further down.
+- Group names in Mermaid diagrams stay readable where a line passes under them.
+- Cloud and bang nodes in Mermaid mindmaps look like a cloud and a burst.
+- Diagram and chart blocks no longer show a fold button that did nothing; folding the heading above still hides them.
+- Lines in Mermaid diagrams that join several nodes to several others meet in one junction, and a line into a node nested in groups comes round the outside and straight in instead of running along the borders.
+- Boards with hundreds of cards scroll smoothly.
+- Shortcuts are drawn crisp and even in every font, in tooltips, the command palette and Settings.
+- Typing while another app, an AI or git changes the same note no longer loses either side. Changes in different places merge, word by word. Where both touch the same words, the file's version stays and yours goes to a copy beside it, “Note (your changes)”, and the status bar says so. Two panes on one note merge the same way, and canvases keep unsaved changes in a copy.
+- Long stretches of typing without a pause are saved every few seconds, not only when you stop.
+- Saving can no longer leave a half-written file: after a crash, a full disk or a power cut the file is the old version or the new one, whole. Links stay links, and files keep their permissions, tags and creation date.
+- A note that disappears for a moment, as during a sync or a checkout, goes back to saving by itself.
+- Velin no longer writes over a file it can't read, or one that stopped being text outside Velin.
+- Canvases say when they can't be saved and try again, and a canvas broken outside Velin is left as it is until it is fixed.
+- When a save fails, Velin says why in plain words, keeps your changes and saves by itself once it can. Closing a tab or quitting asks before letting them go.
+- In a copy of a space from another app, links by full path point into the copy, so editing through them leaves the original alone.
+
+### Security
+
+- Velin no longer trusts website certificates from emSign intermediates that browsers have stopped trusting, when it fetches web data or checks for updates.
+
 ## 0.4.0 — 2026-10-29
 
 ### Changed
