@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.7.0 — 2026-11-13
+
+### Changed
+
+- Deleted files and folders wait a day before they go to the Trash, the space's .trash, or for good. ⌘Z outside a note, or Undo in the status bar, puts them back and opens their tabs again; on a board, ⌘Z brings deleted cards back in place.
+- ⌘Z outside a note also takes back moves, renames, new notes and folders, copies and pastes, with ⌘⇧Z to do them again.
+- A card moved into another column goes where that column's sort puts it, wherever it's dropped; only moving a card within its column places it by hand. If that place is out of view, the column scrolls to show it land.
+- Cards on a board reorder more calmly: they stay solid as they travel, those going further start in a short cascade and pass each other side by side, rising cards over sinking ones, and they slide in from behind a column's edge rather than over it.
+- Deleting one file no longer asks first; folders and several files at once still do (Settings → General).
+
+### Added
+
+- Recently Deleted, at the foot of the sidebar, lists what was deleted in the last day, with Put Back and Empty.
+- Sync keeps a space the same on all your Macs, end-to-end encrypted: the server can't read your files or their names. Changes arrive in under a second and keep syncing while Velin is closed; a cloud in the status bar shows how it stands, and a lost device can be removed. Settings → Modules → Sync.
+- Archive board cards with E, from a card's menu, or a whole column at once: they leave the board but keep their notes and column. Archived above the columns shows them, to drag back or unarchive.
+- A card moved to another column notes when, in its note (`status_changed`), so a column can sort with the most recently moved cards first, or those there longest.
+- Dates with a time in a note's properties show in your local time, readably (`Yesterday 18:40`); the exact date shows when you edit it.
+- Search a board's cards with ⌘F: cards that don't match fade away, and each column counts its matches.
+- On a board, Shift with the arrow keys selects more cards.
+- Dragging a card or column near a board's edge scrolls the board or the column; Escape puts a dragged card back.
+
+### Fixed
+
+- A new card's name wraps onto more lines as you type it, breaking where it will on the card, instead of scrolling sideways.
+- A card dragged on a board keeps its own font and look, and lands from exactly where it was dropped. The gap it opens is its exact size: in another column it opens where the card will land (the column scrolling to show it at its foot), the one it left closes where it was, and on letting go it stays until the card covers it.
+
+### Security
+
+- SQLite is updated to 3.54.1: a database file crafted together with its write-ahead log could make Velin read leftover memory.
+
 ## 0.6.0 — 2026-11-07
 
 ### Changed
